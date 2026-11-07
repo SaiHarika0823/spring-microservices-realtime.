@@ -1,4 +1,4 @@
-package com.vedhu.second_microservice;
+package com.application.secondmicroservice;
 
 public class Product {
 	
