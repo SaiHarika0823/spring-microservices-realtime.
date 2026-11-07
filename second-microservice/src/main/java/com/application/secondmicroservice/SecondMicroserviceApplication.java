@@ -1,4 +1,4 @@
-package com.vedhu.second_microservice;
+package com.application.secondmicroservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
