@@ -2,13 +2,18 @@ package com.application.secondmicroservice;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.math.BigDecimal;
+import java.util.List;
 import java.util.Map;
 
-// 1. Look up "first-microservice" inside Eureka Server
 @FeignClient(name = "first-microservice")
 public interface ProductClient {
 
-    // 2. Call the /api/v1/health URL that you built in ECOMM-101!
     @GetMapping("/api/v1/health")
     Map<String, String> getProductServiceHealth();
+
+    @GetMapping("/api/v1/promotions/freebies")
+    List<Object> getEligibleFreebies(@RequestParam("orderTotal") BigDecimal orderTotal);
 }
